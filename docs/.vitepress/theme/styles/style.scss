@@ -1,0 +1,100 @@
+#app .VPNavBar {
+    border-bottom: 1px solid var(--vp-c-divider-light);
+}
+
+#app .VPHomeHero {
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+    .main {
+        margin-top: -40px;
+    }
+}
+
+#app .VPNavBarTitle {
+    background-color: var(--vp-c-bg);
+    
+    .title {
+        color: transparent;
+        background: var(--vp-home-hero-name-background);
+        margin-bottom: -1px;
+        -webkit-background-clip: text;
+    }
+    img{
+        height: 38px;
+    }
+}
+
+.font-icon {
+    padding: 2px 8px;
+    border-radius: 4px;
+
+    display: inline-block;
+    background-color: var(--vp-c-gray-light-4);
+}
+
+.dark .font-icon {
+    background-color: var(--vp-c-bg);
+}
+
+
+p img {
+    margin-top: 2px;
+}
+
+@media (max-width: 960px) {
+    #app .image {
+        margin-top: -75px;
+    }
+
+    #app .VPHomeHero {
+        margin-bottom: 5px;
+
+        .main {
+            margin-top: 50px;
+            .text{
+                max-width: 776px;
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    #app .VPNavBar .content{
+        position: relative;
+        top: -1px;
+    }
+    
+}
+@media (min-width: 640px){
+    // .name[data-v-27215803], .text[data-v-27215803] {
+    //     max-width: 576px;
+    //     line-height: 56px;
+    //     font-size: 48px;
+    // }
+    #app {
+        .VPSidebar{
+            margin-top: 64px;
+        }
+    }
+    #app .VPHome{
+        padding-bottom: 0px;
+    }
+    #app .VPHomeHero {
+        margin-bottom: 5px;
+        .main {
+            max-width: 692px;
+            margin-top: 50px;
+            .text{
+                max-width: 776px;
+            }
+        }
+        .image{
+            .image-container{
+                .VPImage{
+                    width: 50px;
+                }
+            }
+        }
+    }
+}

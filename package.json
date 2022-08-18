@@ -1,0 +1,29 @@
+{
+  "name": "v-naive-admin-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vbenjs/vue-vben-admin-doc"
+  },
+  "author": {
+    "name": "v-naive-admin-docs",
+    "email": "zane0904@126.com",
+    "url": "https://github.com/vbenjs/vue-vben-admin-doc"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "axios": "^0.27.2",
+    "release-it": "^15.2.0",
+    "sass": "^1.53.0",
+    "vitepress": "^1.0.0-alpha.4",
+    "zx": "^7.0.7"
+  }
+}
