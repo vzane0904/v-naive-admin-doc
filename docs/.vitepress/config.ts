@@ -73,8 +73,9 @@ export default defineConfig({
     socialLinks: [{ icon: "github", link: "https://github.com/zane0904" }],
     editLink:{
       text:'帮助我们改善此页面！',
-      pattern:'https://github.com/zane0904/vitepress/edit/main/docs/:path',
-      // pattern:'https://github.com/zane0904/https://github.com/vuejs/vitepress/edit/main/docs/:path',',
+      pattern:'https://github.com/zane0904/v-naive-admin-doc/edit/master/docs/:path',
+      // https://github.com/zane0904/v-naive-admin-doc/edit/develop/dep/dark.md
+      // pattern:'https://github.com/vuejs/vitepress/edit/main/docs/:path',',
     },
     lastUpdatedText:'最后一次更新时间',
     footer: {
