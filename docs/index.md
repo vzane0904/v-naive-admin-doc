@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /daily/
+      link: /guide/introduce
     - theme: alt
       text: 在线预览
       link: https://www.mmxxn.cn/
