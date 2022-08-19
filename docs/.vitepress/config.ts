@@ -9,15 +9,15 @@ const getNavList = ()=>{
         items:[
           {text: '指南',link: '/guide/introduce'},
           {text: '基础配置',link: '/configure/router'},
-          {text: '其他',link: 'string'},
+          {text: '其他',link: '/other/faq'},
         ] 
       },
       { text: "相关连接",
         items:[
-          {text: '在线预览',link: 'string'},
-          {text: '源码',link: 'string'},
-          {text: '文档源码',link: 'string'},
-          {text: '更新日志',link: 'string'},
+          {text: '在线预览',link: 'https://www.mmxxn.cn/'},
+          {text: '源码',link: 'https://github.com/zane0904/Vnaive'},
+          {text: '文档源码',link: 'https://github.com/zane0904/v-naive-admin-doc'},
+          {text: '更新日志',link: 'https://github.com/zane0904/Vnaive/blob/master/CHANGELOG.md'},
         ] 
       },
       { text: "社区资源",
