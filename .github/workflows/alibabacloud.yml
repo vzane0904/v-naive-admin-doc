@@ -34,7 +34,7 @@ jobs:
          host: ${{ secrets.ALY_HOST }}
          user: ${{ secrets.ALY_USER }}
          pass: ${{ secrets.ALY_PASS }}
-         local: ./* # 构建完成后静态目录的地址
+         local: ./docs/* # 构建完成后静态目录的地址
          remote: ${{ secrets.ALY_DIR }} # 放到服务器上指定文件夹
          connect_timeout: 15s
             
