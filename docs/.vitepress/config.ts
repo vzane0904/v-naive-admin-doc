@@ -61,49 +61,52 @@ const getSidebarList = ()=>{
     ],
   }
 }
-export default defineConfig({
-  title: " ",
-  description: "V Naive Admin",
-  base: "/blog/",
-  head: [["link", { rel: "icon", type: "image/svg+xml", href: "vLogo1.svg" }]],
-  lastUpdated: true,
-  themeConfig: {
-    logo: "/svg.svg",
-    nav: getNavList(),
-    socialLinks: [{ icon: "github", link: "https://github.com/zane0904" }],
-    editLink:{
-      text:'帮助我们改善此页面！',
-      pattern:'https://github.com/zane0904/v-naive-admin-doc/edit/master/docs/:path',
-      // https://github.com/zane0904/v-naive-admin-doc/edit/develop/dep/dark.md
-      // pattern:'https://github.com/vuejs/vitepress/edit/main/docs/:path',',
+export default ({ command, mode })=>{
+  console.log(command, mode);
+  return {
+    title: " ",
+    description: "V Naive Admin",
+    base: command === 'serve'?"/blog/":'./',
+    head: [["link", { rel: "icon", type: "image/svg+xml", href: "vLogo1.svg" }]],
+    lastUpdated: true,
+    themeConfig: {
+      logo: "/svg.svg",
+      nav: getNavList(),
+      socialLinks: [{ icon: "github", link: "https://github.com/zane0904" }],
+      editLink:{
+        text:'帮助我们改善此页面！',
+        pattern:'https://github.com/zane0904/v-naive-admin-doc/edit/master/docs/:path',
+        // https://github.com/zane0904/v-naive-admin-doc/edit/develop/dep/dark.md
+        // pattern:'https://github.com/vuejs/vitepress/edit/main/docs/:path',',
+      },
+      lastUpdatedText:'最后一次更新时间',
+      footer: {
+        message: "Released under the MIT License.",
+        copyright: "Copyright © 2019～present V Naive Admin",
+      },
+      // localeLinks:{
+      //   text:'多语言',
+      //   items:[{
+      //     text: '中文',
+      //     link: 'zh'
+      //   }]
+      // },
+      // outlineTitle:'xxx',
+      sidebar: getSidebarList()
     },
-    lastUpdatedText:'最后一次更新时间',
-    footer: {
-      message: "Released under the MIT License.",
-      copyright: "Copyright © 2019～present V Naive Admin",
+    vite: {
+      server: {
+        host: true,
+        port: 3000,
+        open: true,
+        // proxy: {
+        //   '/so': {
+        //     target: 'http://139.159.245.209:5000', // 代理接口
+        //     changeOrigin: true,
+        //     rewrite: (path) => path.replace(/^\/so/, '')
+        //   }
+        // }
+      },
     },
-    // localeLinks:{
-    //   text:'多语言',
-    //   items:[{
-    //     text: '中文',
-    //     link: 'zh'
-    //   }]
-    // },
-    // outlineTitle:'xxx',
-    sidebar: getSidebarList()
-  },
-  vite: {
-    server: {
-      host: true,
-      port: 3000,
-      open: true,
-      // proxy: {
-      //   '/so': {
-      //     target: 'http://139.159.245.209:5000', // 代理接口
-      //     changeOrigin: true,
-      //     rewrite: (path) => path.replace(/^\/so/, '')
-      //   }
-      // }
-    },
-  },
-});
+  }
+};
