@@ -1,0 +1,42 @@
+# main.yml
+name: deploy to aliyun
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 切换分支
+      - name: Checkout
+        uses: actions/checkout@v2
+      # 使用 node:16.14.0
+      - name: use Node.js 16.14.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.14.0
+      # npm install
+      - name: npm install and build
+        run: |
+          #cd Vnaive # 进入项目目录
+          npm install pnpm -g
+          pnpm install  # 安装依赖
+          pnpm run build  # 执行打包
+          rm -rf ./node_modules
+      # Deploy
+  # 连接到ssh，并且做一个拷贝操作的action
+  # name: rsync-deployments 是通过ssh通过rsync部署代码的GitHub操作
+      - name: Deploy 🚀
+        uses: cross-the-world/scp-pipeline@master
+        env:
+          WELCOME: "ssh scp ssh pipelines"
+          LASTSSH: "Doing something after copying"
+        with:
+         host: ${{ secrets.ALY_HOST }}
+         user: ${{ secrets.ALY_USER }}
+         pass: ${{ secrets.ALY_PASS }}
+         local: ./* # 构建完成后静态目录的地址
+         exclude: node_modules
+         remote: ${{ secrets.ALY_DIR }} # 放到服务器上指定文件夹
+         connect_timeout: 15s
+            
