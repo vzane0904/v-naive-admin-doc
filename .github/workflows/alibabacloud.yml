@@ -10,19 +10,31 @@ jobs:
       # 切换分支
       - name: Checkout
         uses: actions/checkout@v2
+
+      # pnpm
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: true
+
       # 使用 node:16.14.0
       - name: use Node.js 16.14.0
         uses: actions/setup-node@v1
         with:
           node-version: 16.14.0
-      # npm install
+          cache: pnpm
+
+      # 安装依赖
+      - name: pnpm install
+        run: pnpm run bootstrap  # 安装依赖
+
+      # npm build
       - name: npm install and build
-        run: |
-          #cd Vnaive # 进入项目目录
-          npm install pnpm -g
-          pnpm install  # 安装依赖
-          pnpm run build  # 执行打包
-          rm -rf ./node_modules
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: pnpm run docs:build  # 执行打包 |
+        
       # Deploy
   # 连接到ssh，并且做一个拷贝操作的action
   # name: rsync-deployments 是通过ssh通过rsync部署代码的GitHub操作
