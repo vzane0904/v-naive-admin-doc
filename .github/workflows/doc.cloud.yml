@@ -23,14 +23,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.14.0
-          cache: pnpm
 
       # 安装依赖
       - name: 安装依赖 pnpm install
         run: pnpm run bootstrap  # 安装依赖
 
       # npm build
-      - name: 执行打包 npm install and build
+      - name: 执行打包 npm build
         env:
           NODE_OPTIONS: --max_old_space_size=4096
         run: pnpm run docs:build  # 执行打包 |
@@ -47,7 +46,7 @@ jobs:
          host: ${{ secrets.ALY_HOST }}
          user: ${{ secrets.ALY_USER }}
          pass: ${{ secrets.ALY_PASS }}
-         local: press/.vuepress/dist/* # 构建完成后静态目录的地址
          remote: ${{ secrets.ALY_DIR }} # 放到服务器上指定文件夹
+         local: press/.vuepress/dist/* # 构建完成后静态目录的地址
          connect_timeout: 15s
             
