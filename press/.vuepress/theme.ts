@@ -16,9 +16,9 @@ export default hopeTheme({
 
   logo: "/svg.svg",
 
-  repo: "zane0904/v-naive-admin-doc",
+  repo: "https://github.com/zane0904/v-naive-admin-doc",
 
-  docsDir: "docs",
+  docsDir: "press",
   docsBranch:'master',
   // navbar
   navbar: navbar,
