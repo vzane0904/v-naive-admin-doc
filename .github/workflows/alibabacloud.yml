@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 切换分支
-      - name: Checkout
+      - name: 切换分支 Checkout
         uses: actions/checkout@v2
 
       # pnpm
@@ -19,18 +19,18 @@ jobs:
           run_install: true
 
       # 使用 node:16.14.0
-      - name: use Node.js 16.14.0
+      - name: 切换node use Node.js 16.14.0
         uses: actions/setup-node@v1
         with:
           node-version: 16.14.0
           cache: pnpm
 
       # 安装依赖
-      - name: pnpm install
+      - name: 安装依赖 pnpm install
         run: pnpm run bootstrap  # 安装依赖
 
       # npm build
-      - name: npm install and build
+      - name: 执行打包 npm install and build
         env:
           NODE_OPTIONS: --max_old_space_size=4096
         run: pnpm run docs:build  # 执行打包 |
@@ -38,7 +38,7 @@ jobs:
       # Deploy
   # 连接到ssh，并且做一个拷贝操作的action
   # name: rsync-deployments 是通过ssh通过rsync部署代码的GitHub操作
-      - name: Deploy 🚀
+      - name: 发布 Deploy 🚀
         uses: cross-the-world/scp-pipeline@master
         env:
           WELCOME: "ssh scp ssh pipelines"
