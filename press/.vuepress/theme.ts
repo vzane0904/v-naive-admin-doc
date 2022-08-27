@@ -6,8 +6,8 @@ export default hopeTheme({
   hostname: "http://doc.mmxxn.cn/",
 
   author: {
-    name: "Mr.Yc",
-    url: "https://github.com/zane0904/Vnaive",
+    name: "Zane0904",
+    url: "https://github.com/zane0904",
   },
   lastUpdated:true,
   contributors:true,
