@@ -5,425 +5,94 @@ order: 11
 category:
   - 使用指南
 tag:
-  - Markdown
+  - 介绍
 ---
-
-VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻松生成文档或博客站点。
-
-你应该创建和编写 Markdown 文件，以便 VuePress 可以根据文件结构将它们转换为不同的页面。
-
-<!-- more -->
 
 ## 项目介绍
 
-如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](https://vuepress-theme-hope.github.io/v2/zh/cookbook/markdown/) 和 [Markdown 演示](https://vuepress-theme-hope.github.io/v2/zh/cookbook/markdown/demo.html)。
+V-Naive-Admin 是一个免费开源的中后台模版,使用了最新的 [Vue3](https://cn.vuejs.org/) 、[Vite2](https://cn.vitejs.dev/) 、[TypeScript](https://www.tslang.cn/) 、[Pinia](https://pinia.web3doc.top/) 、[Naive UI](https://www.naiveui.com/zh-CN/light)等主流技术开发，开箱即用的中后台前端解决方案，本人是第一次写开源项目，也处于一个学习阶段，代码可能写的不太优雅，如果您对我的代码有更好的建议也希望您能提出宝贵的一键，我会虚心去学习 谢谢.
 
-## Markdown 配置
+## 文档
 
-VuePress 通过 Frontmatter 为每个 Markdown 页面引入配置。
+- 中文文档地址为 [v-naive-admin-doc](https://github.com/zane0904/v-naive-admin-doc)，采用开源 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/) 开发。如发现文档有误，欢迎提 pr 帮助我们改进。
 
-::: info
+- 英文文档暂时没有时间来写，欢迎同学毛遂自荐来帮忙写英文文档。
 
-Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](https://vuepress-theme-hope.github.io/v2/zh/cookbook/vuepress/page.html#front-matter)。
+## 在本地运行文档
 
-:::
 
-## Markdown 扩展
+::: tip 如需本地运行文档，需拉取代码到本地。
 
-VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来解析 Markdown 内容，因此可以借助于 markdown-it 插件来实现 [语法扩展](https://github.com/markdown-it/markdown-it#syntax-extensions) 。
+```shell
+# 拉取代码
+git clone https://github.com/zane0904/v-naive-admin-doc
 
-### VuePress 扩展
+cd ./v-naive-admin-doc
 
-为了丰富文档写作，VuePress 对 Markdown 语法进行了扩展。
+# 安装依赖
 
-关于这些扩展，请阅读 [VuePress 中的 Markdown 扩展](https://vuepress-theme-hope.github.io/v2/zh/cookbook/vuepress/markdown.html)。
+pnpm run bootstrap
 
-### 主题扩展
-
-通过 [`vuepress-plugin-md-enhance`][md-enhance]，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
-
-:::: tip 一键启用
-
-你可以设置在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance][md-enhance] 插件的所有功能。
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
+# 运行项目
+pnpm run docs:dev
 ```
-
-@tab JS
-
-```js
-const { hopeTheme } = require("vuepress-theme-hope");
-
-module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
 :::
 
-::::
+## 需要具备的基础知识
 
-#### 自定义容器
+需要一定的前端基础知识包括不限于 HTML、css、js、Vue 如果您具备这些基础那么很容易上手开发
 
-::: v-pre
+- [Vue3](https://cn.vuejs.org/)
+- [Axios]()
+- [Pinia](https://pinia.web3doc.top/)
+- [Vue-router](https://router.vuejs.org/zh/)
+- [Naive-UI](https://www.naiveui.com/zh-CN/light)
+- [Es6+](https://es6.ruanyifeng.com/)
+- [TypeScript](https://www.tslang.cn/)
+- [WindiCss](https://cn.windicss.org/)
+- [Mock.js](http://mockjs.com/)
+- [Vitejs](https://cn.vitejs.d)
 
-安全的在 Markdown 中使用 {{ variable }}。
+## 浏览器支持
 
-:::
+本地开发推荐使用 `Chrome 最新版` 浏览器,不支持 `Chrome 80` 以下版本。
 
-::: info 自定义标题
+支持现代浏览器, 不支持 IE
 
-信息容器，包含 `代码` 与 [链接](#自定义容器)。
+| ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png)<br/>IE | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)<br/>Edge | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)<br/>Firefox | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)<br/>Chrome | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)<br/>Safari |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| not support| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
-```js
-const a = 1;
-```
+## 相关仓库
 
-:::
+如果这些插件对您有帮助，可以给一个 star 支持下
 
-::: tip 自定义标题
+- [vite-plugin-mock](https://github.com/anncwb/vite-plugin-mock) - 用于本地及开发环境数据 mock
+- [vite-plugin-html](https://github.com/anncwb/vite-plugin-html) - 用于 html 模版转换及压缩
+- [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) - 用于组件库样式按需引入
+- [vite-plugin-theme](https://github.com/anncwb/vite-plugin-theme) - 用于在线切换主题色等颜色相关配置
+- [vite-plugin-imagemin](https://github.com/anncwb/vite-plugin-imagemin) - 用于打包压缩图片资源
+- [vite-plugin-compression](https://github.com/anncwb/vite-plugin-compression) - 用于打包输出.gz|.brotil 文件
+- [vite-plugin-svg-icons](https://github.com/anncwb/vite-plugin-svg-icons) - 用于快速生成 svg 雪碧图
+- [unplugin-vue-components/vite](https://github.com/antfu/unplugin-vue-components) - 自动引入组件插件 省去 UI 库的大量 import 语句
+- [unplugin-auto-import/vite](https://github.com/antfu/unplugin-auto-import) - 自动导入插件 Api 省去 UI 库的大量 import 语句
+- [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer) - rollup 打包体积分析插件
 
-提示容器
+## 安全
 
-:::
+[![OSCS Status](https://www.oscs1024.com/platform/badge/zane0904/v-naive-admin.svg?size=small)](https://www.murphysec.com/dr/1vtzlp7pg8nXvdUE47)
 
-::: warning 自定义标题
+安全是一个开源项目重中之重，为此我们已接入 [oscs 墨菲安全扫描](https://www.murphysec.com/dr/1vtzlp7pg8nXvdUE47) ，Admin 源码中未被扫描出任何风险项，超越 100%的项目，确保人畜无害！大家可以放心使用(我们会不定期对项目进行安全扫描)，当然您如果扔不放心，我们推荐您在使用前 clone admin 源码亲自阅读一番，我们是 100%开源，是否有风险您一看便知.
 
-警告容器
+## 加入我们
 
-:::
+- [V-Naive-Admin](https://github.com/zane0904/v-naive-admin) 还在持续更新中，欢迎您的加入，共同维护，逐步完善，将项目做得更强。同时整个项目本着一切免费的原则，原则上不会收取任何费用及版权，可以放心使用。
+- 如果您想加入我们，可以多提供一些好的建议或者提交 pr，我们会根据您的活跃度邀请您加入。
 
-::: danger 自定义标题
+## License
 
-危险容器
+[![license](https://img.shields.io/github/license/anncwb/vue-vben-admin.svg)](LICENSE)
 
-:::
+[MIT © VNaive-20222](./LICENSE)
 
-::: details 自定义标题
-
-详情容器
-
-:::
-
-:::: details 代码
-
-```md
-::: v-pre
-
-安全的在 Markdown 中使用 {{ variable }}。
-
-:::
-
-::: info 自定义标题
-
-信息容器
-
-:::
-
-::: tip 自定义标题
-
-提示容器
-
-:::
-
-::: warning 自定义标题
-
-警告容器
-
-:::
-
-::: danger 自定义标题
-
-危险容器
-
-:::
-
-::: details 自定义标题
-
-详情容器
-
-:::
-```
-
-::::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/container.html)
-
-#### 代码块
-
-::: code-tabs
-
-@tab pnpm
-
-```bash
-pnpm add -D vuepress-theme-hope
-```
-
-@tab yarn
-
-```bash
-yarn add -D vuepress-theme-hope
-```
-
-@tab:active npm
-
-```bash
-npm i -D vuepress-theme-hope
-```
-
-:::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/code-tabs.html)
-
-#### 自定义对齐
-
-::: center
-
-我是居中的
-
-:::
-
-::: right
-
-我在右对齐
-
-:::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/align.html)
-
-#### 上下角标
-
-19^th^ H~2~O
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/sup-sub.html)
-
-#### 脚注
-
-此文字有脚注[^first].
-
-[^first]: 这是脚注内容
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/footnote.html)
-
-#### 标记
-
-你可以标记 ==重要的内容== 。
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/mark.html)
-
-#### 任务列表
-
-- [x] 计划 1
-- [ ] 计划 2
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/tasklist.html)
-
-### 图片增强
-
-支持为图片设置颜色模式和大小
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/image.html)
-
-#### 图表
-
-::: chart 一个散点图案例
-
-```json
-{
-  "type": "scatter",
-  "data": {
-    "datasets": [
-      {
-        "label": "散点数据集",
-        "data": [
-          { "x": -10, "y": 0 },
-          { "x": 0, "y": 10 },
-          { "x": 10, "y": 5 },
-          { "x": 0.5, "y": 5.5 }
-        ],
-        "backgroundColor": "rgb(255, 99, 132)"
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "x": {
-        "type": "linear",
-        "position": "bottom"
-      }
-    }
-  }
-}
-```
-
-:::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/chart.html)
-
-#### Echarts
-
-::: echarts 一个折线图案例
-
-```json
-{
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [150, 230, 224, 218, 135, 147, 260],
-      "type": "line"
-    }
-  ]
-}
-```
-
-:::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/echarts.html)
-
-#### 流程图
-
-```flow
-cond=>condition: 是否执行操作?
-process=>operation: 操作
-e=>end: 结束
-
-cond(yes)->process->e
-cond(no)->e
-```
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/flowchart.html)
-
-#### Mermaid
-
-```mermaid
-flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
-    one --> two
-    three --> two
-    two --> c2
-```
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/mermaid.html)
-
-#### Tex 语法
-
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/tex.html)
-
-#### 导入文件
-
-@include(./README.md{11-17})
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/include.html)
-
-#### 代码演示
-
-::: normal-demo 一个普通 Demo
-
-```html
-<h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/demo.html)
-
-#### 样式化
-
-<!-- markdownlint-disable MD033 -->
-
-设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/stylize.html)
-
-<!-- markdownlint-enable MD033 -->
-
-#### 幻灯片
-
-@slidestart
-
-## 幻灯片 1
-
-一个有文字和 [链接](https://mrhope.site) 的段落
-
----
-
-## 幻灯片 2
-
-- 项目 1
-- 项目 2
-
----
-
-## 幻灯片 3.1
-
-```js
-const a = 1;
-```
-
---
-
-## 幻灯片 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/presentation.html)
-
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/
+此项目可免费用于商业用途，请遵守 MIT 协议并保留作者技术支持声明.

@@ -24,6 +24,11 @@ export default sidebar([
         icon: "note",
         link: "catalogue.md",
       },
+      {
+        text: "DEMO",
+        icon: "note",
+        link: "MD_DEMO.md",
+      },
     ],
   },
   {

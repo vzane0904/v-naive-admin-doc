@@ -12,8 +12,8 @@ export default navbar([
   { text: "相关链接", icon: "creative", 
     children: [
       {text: '在线预览 ',icon: "/vLogo1.svg",link: 'https://www.mmxxn.cn/'},
-      {text: '更新日志 ',icon: "rizhi",link: 'https://github.com/zane0904/v-naive/blob/master/CHANGELOG.md'},
-      {text: '源码 ',icon: "github",link: 'https://github.com/zane0904/v-naive'},
+      {text: '更新日志 ',icon: "rizhi",link: 'https://github.com/zane0904/v-naive-admin/blob/master/CHANGELOG.md'},
+      {text: '源码 ',icon: "github",link: 'https://github.com/zane0904/v-naive-admin'},
       {text: '文档源码 ',icon: "github",link: 'https://github.com/zane0904/v-naive-admin-doc'},
     ],
   },
